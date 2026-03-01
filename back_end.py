@@ -3,17 +3,19 @@ import mysql.connector
 import os
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)   # Better secret key
+app.secret_key = os.environ.get("SECRET_KEY")   # Better secret key
 
 
 # ================= DATABASE CONNECTION =================
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="smile1",
-    database="smile"
+    host=os.environ.get("DB_HOST"),
+    user=os.environ.get("DB_USER"),
+    password=os.environ.get("DB_PASSWORD"),
+    database=os.environ.get("DB_NAME"),
+    port=int(os.environ.get("DB_PORT"))
 )
 
+print("Connected Sucessfully!")
 
 # ================= HOME =================
 @app.route('/')
@@ -100,4 +102,4 @@ def logout():
 
 # ================= RUN APP =================
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

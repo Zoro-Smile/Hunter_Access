@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System - Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Signup.css') }}">
+</head>
+<body>
+
+    <div class="system-background"></div>
+
+    <div class="card">
+        <h1 class="system-title">SYSTEM REGISTRATION</h1>
+
+        <form action="/signup" method="post">
+
+            <div class="input-group">
+                <input type="text" name="name" required>
+                <label>Name</label>
+            </div>
+
+            <div class="input-group">
+                <input type="email" name="email" required>
+                <label>Email</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+
+            <button type="submit">Initialize Hunter</button>
+
+        </form>
+
+        <div class="login-link">
+            <span>Already a Hunter?</span>
+            <a href="/login">Access System</a>
+        </div>
+    </div>
+
+</body>
+</html>

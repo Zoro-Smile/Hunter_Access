@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Signup.css') }}">
+</head>
+<body>
+
+    <div class="system-background"></div>
+
+    <div class="card">
+        <h1 class="system-title">SYSTEM ACCESS</h1>
+
+        <form action="/login" method="post">
+
+            <div class="input-group">
+                <input type="text" name="name" required>
+                <label>Hunter</label>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+
+            <button type="submit">Accept</button>
+
+        </form>
+
+        <div class="login-link">
+            <span>New Hunter?</span>
+            <a href="/signup">Begin Registration</a>
+        </div>
+    </div>
+
+</body>
+</html>

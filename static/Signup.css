@@ -1,0 +1,302 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animated Background */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #0f2027, #1f3b4d, #12232e, #0c1a21);
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+/* Background animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass Card */
+.card {
+    position: relative;
+    width: 360px;
+    padding: 40px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 40px rgba(0, 255, 200, 0.2);
+    border: 1px solid rgba(0, 255, 200, 0.2);
+    animation: glowPulse 3s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+    from { box-shadow: 0 0 20px rgba(0, 255, 200, 0.3); }
+    to { box-shadow: 0 0 45px rgba(0, 255, 200, 0.6); }
+}
+
+/* Title */
+.system-title {
+    text-align: center;
+    color: #00ffe1;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+/* Input group */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-group input {
+    width: 100%;
+    padding: 12px 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+    outline: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* Floating label */
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+/* Floating effect */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -10px;
+    font-size: 12px;
+    color: #00ffe1;
+}
+
+/* Focus effect */
+.input-group input:focus {
+    border-bottom: 2px solid #00ffe1;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00ffe1;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #00c8b4;
+    transform: scale(1.05);
+}
+
+/* Login section */
+.login-link {
+    margin-top: 25px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.login-link span {
+    display: block;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+.login-link a {
+    color: #00ffe1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-link a:hover {
+    text-shadow: 0 0 8px #00ffe1;
+}
+
+/* ================= HOME SYSTEM SCREEN ================= */
+
+.system-home {
+    background: radial-gradient(circle at center, #0f2027, #000000 70%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Dark overlay animation */
+.system-overlay {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Box */
+.system-box {
+    padding: 50px;
+    border: 1px solid rgba(0, 255, 200, 0.3);
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 40px rgba(0, 255, 200, 0.4);
+}
+
+/* Main system text */
+.system-text {
+    color: #00ffe1;
+    font-size: 24px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+/* Sub text */
+.system-subtext {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* Button */
+.system-button {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #00ffe1;
+    color: #00ffe1;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.system-button:hover {
+    background: #00ffe1;
+    color: black;
+    box-shadow: 0 0 20px #00ffe1;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Glitch effect */
+.glitch {
+    position: relative;
+    animation: glitch 1.5s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px #00ffe1; }
+    25% { text-shadow: -2px -2px #ff00ff; }
+    50% { text-shadow: 2px -2px #00ffe1; }
+    75% { text-shadow: -2px 2px #ff00ff; }
+    100% { text-shadow: 2px 2px #00ffe1; }
+}
+
+/* System Question */
+.system-question {
+    color: #ff004c;
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Countdown */
+.countdown {
+    font-size: 40px;
+    color: #00ffe1;
+    margin-top: 20px;
+    animation: pulse 1s infinite;
+}
+
+/* Flash effect */
+.flash {
+    animation: screenFlash 0.5s ease;
+}
+
+@keyframes screenFlash {
+    0% { background-color: white; }
+    100% { background-color: transparent; }
+}
+
+/* Typewriter text style */
+.system-subtext {
+    color: #ffffff;
+    font-size: 14px;
+    min-height: 40px;
+    margin-bottom: 15px;
+}
+
+/* Bigger cinematic countdown */
+.countdown {
+    font-size: 50px;
+    color: #00ffe1;
+    margin-top: 20px;
+    text-shadow: 0 0 15px #00ffe1;
+}
+
+/* Accept Button */
+.system-button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border: 1px solid #00ffe1;
+    background: transparent;
+    color: #00ffe1;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.system-button:hover {
+    background: #00ffe1;
+    color: black;
+    box-shadow: 0 0 20px #00ffe1;
+}
+
+/* Auto-click animation */
+.auto-click {
+    animation: clickEffect 1s forwards;
+}
+
+@keyframes clickEffect {
+    0% {
+        transform: scale(1);
+        background: transparent;
+    }
+    50% {
+        transform: scale(0.9);
+        background: #00ffe1;
+        color: black;
+        box-shadow: 0 0 30px #00ffe1;
+    }
+    100% {
+        transform: scale(1.05);
+        background: #00ffe1;
+        color: black;
+    }
+}

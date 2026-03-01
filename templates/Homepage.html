@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FLIPY SYSTEM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Signup.css') }}">
+</head>
+<body class="system-home">
+
+    <div class="system-overlay">
+        <div class="system-box">
+            <p class="system-text glitch">⚠ PLAYER DETECTED</p>
+
+            <p class="system-subtext" id="typewriter"></p>
+
+            <p class="system-question">
+                Will You Accept?
+            </p>
+
+            <p class="countdown" id="countdown">5</p>
+
+            <button id="acceptBtn" class="system-button">
+                ACCEPT
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // TYPEWRITER
+        const text = "You have acquired the qualification to be a Player.";
+        const typeElement = document.getElementById("typewriter");
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typeElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 40);
+            }
+        }
+        typeWriter();
+
+        // COUNTDOWN
+        let count = 5;
+        const countdownElement = document.getElementById("countdown");
+        const button = document.getElementById("acceptBtn");
+
+        const timer = setInterval(() => {
+            count--;
+            countdownElement.textContent = count;
+
+            if (count === 0) {
+                clearInterval(timer);
+
+                // Add auto-click animation
+                button.classList.add("auto-click");
+
+                // Redirect after animation
+                setTimeout(() => {
+                    window.location.href = "/signup";
+                }, 1200);
+            }
+        }, 1000);
+
+        // Normal manual click
+        button.addEventListener("click", () => {
+            window.location.href = "/signup";
+        });
+    </script>
+
+</body>
+</html>
